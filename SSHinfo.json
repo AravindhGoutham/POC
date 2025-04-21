@@ -1,0 +1,7 @@
+[
+{"hostname":"R1","IP":"198.51.100.1","username":"admin","password":"admin"},
+{"hostname":"R2","IP":"198.51.100.3","username":"admin","password":"admin"},
+{"hostname":"R3","IP":"198.51.100.4","username":"admin","password":"admin"},
+{"hostname":"R4","IP":"198.51.100.5","username":"admin","password":"admin"}
+
+]

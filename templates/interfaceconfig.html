@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interface Configuration</title>
+</head>
+<body>
+    <h2>Configure Interface Details</h2>
+
+    <form method="POST" action="/interfaceconfigsubmit">
+        <label>Management IP Address:</label><br>
+        <input type="text" name="mgmt_ip" required><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" name="password" required><br><br>
+
+        <label>Interface Name (example: GigabitEthernet0/1)</label><br>
+        <input type="text" name="interface_name"><br><br>
+
+        <label>IPv4 Address</label><br>
+        <input type="text" name="ipv4_address"><br><br>
+
+        <label>Subnet Mask</label><br>
+        <input type="text" name="ipv4_mask"><br><br>
+
+        <label>IPv6 Address</label><br>
+        <input type="text" name="ipv6_address"><br><br>
+
+        <label>Shutdown or No Shutdown</label><br>
+        <select name="shutdown_action">
+            <option value="">--Select Action--</option>
+            <option value="shutdown">Shutdown</option>
+            <option value="no shutdown">No Shutdown</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+

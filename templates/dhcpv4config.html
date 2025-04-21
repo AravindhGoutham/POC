@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DHCPv4 Configuration</title>
+</head>
+<body>
+    <h2>Configure DHCPv4</h2>
+
+    <form method="POST" action="/dhcpv4submit">
+        <label>Management IP Address:</label><br>
+        <input type="text" name="mgmt_ip" required><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" name="password" required><br><br>
+
+        <label>DHCP Pool Name:</label><br>
+        <input type="text" name="pool_name" required><br><br>
+
+        <label>Network Address:</label><br>
+        <input type="text" name="network_address" required><br><br>
+
+        <label>Subnet Mask:</label><br>
+        <input type="text" name="subnet_mask" required><br><br>
+
+        <label>Default Gateway:</label><br>
+        <input type="text" name="default_gateway" required><br><br>
+
+        <label>DNS Server:</label><br>
+        <input type="text" name="dns_server" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
