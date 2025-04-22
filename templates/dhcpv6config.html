@@ -3,37 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <title>DHCPv6 Configuration</title>
+    <style>
+        body {
+            background-color: #f2f6fc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
     <h2>Configure DHCPv6</h2>
-    <form action="/configure_dhcpv6" method="POST">
-        <label for="mgmt_ip">Management IP:</label><br>
-        <input type="text" id="mgmt_ip" name="mgmt_ip" required><br><br>
 
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
+    <div class="form-container">
+        <form action="/configure_dhcpv6" method="POST">
+            <label for="mgmt_ip">Management IP:</label>
+            <input type="text" id="mgmt_ip" name="mgmt_ip" required>
 
-        <label for="pool_name">DHCPv6 Pool Name:</label><br>
-        <input type="text" id="pool_name" name="pool_name" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
 
-        <label for="ipv6_prefix">IPv6 Prefix:</label><br>
-        <input type="text" id="ipv6_prefix" name="ipv6_prefix" required><br><br>
+            <label for="pool_name">DHCPv6 Pool Name:</label>
+            <input type="text" id="pool_name" name="pool_name" required>
 
-        <label for="prefix_length">Prefix Length:</label><br>
-        <input type="text" id="prefix_length" name="prefix_length" required><br><br>
+            <label for="ipv6_prefix">IPv6 Prefix:</label>
+            <input type="text" id="ipv6_prefix" name="ipv6_prefix" required>
 
-        <label for="dns_server">DNS Server:</label><br>
-        <input type="text" id="dns_server" name="dns_server"><br><br>
+            <label for="prefix_length">Prefix Length:</label>
+            <input type="text" id="prefix_length" name="prefix_length" required>
 
-        <label for="domain_name">Domain Name:</label><br>
-        <input type="text" id="domain_name" name="domain_name"><br><br>
+            <label for="dns_server">DNS Server:</label>
+            <input type="text" id="dns_server" name="dns_server">
 
-        <label for="interface_name">Interface Name</label><br>
-        <input type="text" id="interface_name" name="interface_name" required><br><br>
+            <label for="domain_name">Domain Name:</label>
+            <input type="text" id="domain_name" name="domain_name">
 
-        <input type="submit" value="Configure DHCPv6">
-    </form>
+            <label for="interface_name">Interface Name:</label>
+            <input type="text" id="interface_name" name="interface_name" required>
+
+            <input type="submit" value="Configure DHCPv6">
+        </form>
+    </div>
 </body>
 </html>
-
 

@@ -1,34 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>DHCPv4 Configuration</title>
+    <style>
+        body {
+            background-color: #f2f6fc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 50px;
+            flex-wrap: wrap;
+            width: 90%;
+            max-width: 1400px;
+        }
+
+        .image-container {
+            flex: 1;
+            background: url('/static/dhcp_handshake.png') no-repeat center center;
+            background-size: contain; /* ✅ FIT full image without cropping */
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: 550px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            min-height: 550px; /* Match the image height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
     <h2>Configure DHCPv4</h2>
 
-    <form method="POST" action="/dhcpv4submit">
-        <label>Management IP Address:</label><br>
-        <input type="text" name="mgmt_ip" required><br><br>
+    <div class="container">
+        <div class="image-container"></div>
 
-        <label>Password:</label><br>
-        <input type="password" name="password" required><br><br>
+        <div class="form-container">
+            <form method="POST" action="/dhcpv4submit">
+                <label>Management IP Address:</label>
+                <input type="text" name="mgmt_ip" required>
 
-        <label>DHCP Pool Name:</label><br>
-        <input type="text" name="pool_name" required><br><br>
+                <label>Password:</label>
+                <input type="password" name="password" required>
 
-        <label>Network Address:</label><br>
-        <input type="text" name="network_address" required><br><br>
+                <label>DHCP Pool Name:</label>
+                <input type="text" name="pool_name" required>
 
-        <label>Subnet Mask:</label><br>
-        <input type="text" name="subnet_mask" required><br><br>
+                <label>Network Address:</label>
+                <input type="text" name="network_address" required>
 
-        <label>Default Gateway:</label><br>
-        <input type="text" name="default_gateway" required><br><br>
+                <label>Subnet Mask:</label>
+                <input type="text" name="subnet_mask" required>
 
-        <label>DNS Server:</label><br>
-        <input type="text" name="dns_server" required><br><br>
+                <label>Default Gateway:</label>
+                <input type="text" name="default_gateway" required>
 
-        <input type="submit" value="Submit">
-    </form>
+                <label>DNS Server:</label>
+                <input type="text" name="dns_server" required>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
+
