@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
 from flask import Flask, render_template, request, send_from_directory
+import os
 import getconfig
 import diffconfig
 import dhcpv4config
+import dhcpv6config
 import interfaceconfig
 
 app = Flask(__name__)
@@ -32,23 +34,46 @@ def dhcpv4_page():
 
 @app.route('/dhcpv4submit', methods=['POST'])
 def dhcpv4_submit():
-    if request.method == 'POST':
-        mgmt_ip = request.form.get('mgmt_ip')
-        password = request.form.get('password')
-        pool_name = request.form.get('pool_name')
-        network_address = request.form.get('network_address')
-        subnet_mask = request.form.get('subnet_mask')
-        default_gateway = request.form.get('default_gateway')
-        dns_server = request.form.get('dns_server')
+    mgmt_ip = request.form.get('mgmt_ip')
+    password = request.form.get('password')
+    pool_name = request.form.get('pool_name')
+    network_address = request.form.get('network_address')
+    subnet_mask = request.form.get('subnet_mask')
+    default_gateway = request.form.get('default_gateway')
+    dns_server = request.form.get('dns_server')
 
-        success, message = dhcpv4config.configure_dhcpv4(
-            mgmt_ip, password, pool_name, network_address, subnet_mask, default_gateway, dns_server
-        )
+    success, message = dhcpv4config.configure_dhcpv4(
+        mgmt_ip, password, pool_name, network_address, subnet_mask, default_gateway, dns_server
+    )
 
-        if success:
-            return f"DHCPv4 Configuration Successful on {mgmt_ip}!"
-        else:
-            return f"Error: {message}", 500
+    if success:
+        return f"DHCPv4 Configuration Successful on {mgmt_ip}!"
+    else:
+        return f"Error: {message}", 500
+
+@app.route('/dhcpv6')
+def dhcpv6_page():
+    return render_template('dhcpv6config.html')
+
+@app.route('/configure_dhcpv6', methods=['POST'])
+def dhcpv6_submit():
+    mgmt_ip = request.form.get('mgmt_ip')
+    password = request.form.get('password')
+    pool_name = request.form.get('pool_name')
+    ipv6_prefix = request.form.get('ipv6_prefix')
+    prefix_length = request.form.get('prefix_length')
+    dns_server = request.form.get('dns_server')
+    domain_name = request.form.get('domain_name')
+    interface_name = request.form.get('interface_name')
+
+    success, message = dhcpv6config.configure_dhcpv6(
+        mgmt_ip, password, pool_name, ipv6_prefix, prefix_length, dns_server, domain_name, interface_name
+    )
+
+    if success:
+        return f"DHCPv6 Configuration Successful on {mgmt_ip}!"
+    else:
+        return f"Error: {message}", 500
 
 @app.route('/interfaceconfig')
 def interface_config_page():
@@ -56,21 +81,22 @@ def interface_config_page():
 
 @app.route('/interfaceconfigsubmit', methods=['POST'])
 def interface_config_submit():
-    if request.method == 'POST':
-        mgmt_ip = request.form.get('mgmt_ip')
-        password = request.form.get('password')
-        interface_name = request.form.get('interface_name')
-        ipv4_address = request.form.get('ipv4_address')
-        ipv4_mask = request.form.get('ipv4_mask')
-        ipv6_address = request.form.get('ipv6_address')
-        shutdown_action = request.form.get('shutdown_action')
-        success, message = interfaceconfig.configure_interface(
-            mgmt_ip, password, interface_name, ipv4_address, ipv4_mask, ipv6_address, shutdown_action
-        )
-        if success:
-            return f"Interface Configuration Successful on {mgmt_ip}!"
-        else:
-            return f"Error: {message}", 500
+    mgmt_ip = request.form.get('mgmt_ip')
+    password = request.form.get('password')
+    interface_name = request.form.get('interface_name')
+    ipv4_address = request.form.get('ipv4_address')
+    ipv4_mask = request.form.get('ipv4_mask')
+    ipv6_address = request.form.get('ipv6_address')
+    shutdown_action = request.form.get('shutdown_action')
+
+    success, message = interfaceconfig.configure_interface(
+        mgmt_ip, password, interface_name, ipv4_address, ipv4_mask, ipv6_address, shutdown_action
+    )
+
+    if success:
+        return f"Interface Configuration Successful on {mgmt_ip}!"
+    else:
+        return f"Error: {message}", 500
+
 if __name__ == '__main__':
     app.run(debug=True, port=80)
-

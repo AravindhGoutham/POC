@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DHCPv6 Configuration</title>
+</head>
+<body>
+    <h2>Configure DHCPv6</h2>
+    <form action="/configure_dhcpv6" method="POST">
+        <label for="mgmt_ip">Management IP:</label><br>
+        <input type="text" id="mgmt_ip" name="mgmt_ip" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="pool_name">DHCPv6 Pool Name:</label><br>
+        <input type="text" id="pool_name" name="pool_name" required><br><br>
+
+        <label for="ipv6_prefix">IPv6 Prefix:</label><br>
+        <input type="text" id="ipv6_prefix" name="ipv6_prefix" required><br><br>
+
+        <label for="prefix_length">Prefix Length:</label><br>
+        <input type="text" id="prefix_length" name="prefix_length" required><br><br>
+
+        <label for="dns_server">DNS Server:</label><br>
+        <input type="text" id="dns_server" name="dns_server"><br><br>
+
+        <label for="domain_name">Domain Name:</label><br>
+        <input type="text" id="domain_name" name="domain_name"><br><br>
+
+        <label for="interface_name">Interface Name</label><br>
+        <input type="text" id="interface_name" name="interface_name" required><br><br>
+
+        <input type="submit" value="Configure DHCPv6">
+    </form>
+</body>
+</html>
+
+
