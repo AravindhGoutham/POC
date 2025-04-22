@@ -1,7 +1,10 @@
 [
-{"hostname":"R1","IP":"198.51.100.1","username":"admin","password":"admin"},
-{"hostname":"R2","IP":"198.51.100.3","username":"admin","password":"admin"},
-{"hostname":"R3","IP":"198.51.100.4","username":"admin","password":"admin"},
-{"hostname":"R4","IP":"198.51.100.5","username":"admin","password":"admin"}
-
+    {"hostname":"R1","IP":"198.51.100.10","username":"team","password":"team"},
+    {"hostname":"R2","IP":"198.51.100.20","username":"team","password":"team"},
+    {"hostname":"R3","IP":"198.51.100.30","username":"team","password":"team"},
+    {"hostname":"R4","IP":"198.51.100.40","username":"team","password":"team"},
+    {"hostname":"R5","IP":"198.51.100.50","username":"team","password":"team"},
+    {"hostname":"R6","IP":"198.51.100.60","username":"team","password":"team"},
+    {"hostname":"R7","IP":"198.51.100.70","username":"team","password":"team"},
+    {"hostname":"R8","IP":"198.51.100.80","username":"team","password":"team"}
 ]

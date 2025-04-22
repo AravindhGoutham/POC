@@ -7,10 +7,14 @@ from datetime import datetime
 def configurations():
     driver = get_network_driver("ios")
 
-    routers = [{"hostname": "198.51.100.1","Device":"Router (R1)", "username": "admin", "password": "admin", "platform": "ios"},
-               {"hostname": "198.51.100.3","Device":"Router (R2)", "username": "admin", "password": "admin", "platform": "ios"},
-               {"hostname": "198.51.100.4","Device":"Router (R3)", "username": "admin", "password": "admin", "platform": "ios"},
-               {"hostname": "198.51.100.5","Device":"Router (R4)","username": "admin", "password": "admin", "platform": "ios"}]
+    routers = [{"hostname": "198.51.100.10","Device":"Router (R1)", "username": "team", "password": "team", "platform": "ios"},
+               {"hostname": "198.51.100.20","Device":"Router (R2)", "username": "team", "password": "team", "platform": "ios"},
+               {"hostname": "198.51.100.30","Device":"Router (R3)", "username": "team", "password": "team", "platform": "ios"},
+               {"hostname": "198.51.100.40","Device":"Router (R4)", "username": "team", "password": "team", "platform": "ios"},
+               {"hostname": "198.51.100.50","Device":"Router (R5)", "username": "team", "password": "team", "platform": "ios"},
+               {"hostname": "198.51.100.60","Device":"Router (R6)", "username": "team", "password": "team", "platform": "ios"},
+               {"hostname": "198.51.100.70","Device":"Router (R7)", "username": "team", "password": "team", "platform": "ios"},
+               {"hostname": "198.51.100.80","Device":"Router (R8)", "username": "team", "password": "team", "platform": "ios"}]
 
     saved_files = []
 
@@ -40,3 +44,5 @@ def configurations():
 
 if __name__ == "__main__":
     configurations()
+
+
