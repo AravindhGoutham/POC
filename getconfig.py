@@ -7,14 +7,18 @@ from datetime import datetime
 def configurations():
     driver = get_network_driver("ios")
 
-    routers = [{"hostname": "198.51.100.10","Device":"Router (R1)", "username": "team", "password": "team", "platform": "ios"},
-               {"hostname": "198.51.100.20","Device":"Router (R2)", "username": "team", "password": "team", "platform": "ios"},
-               {"hostname": "198.51.100.30","Device":"Router (R3)", "username": "team", "password": "team", "platform": "ios"},
-               {"hostname": "198.51.100.40","Device":"Router (R4)", "username": "team", "password": "team", "platform": "ios"},
-               {"hostname": "198.51.100.50","Device":"Router (R5)", "username": "team", "password": "team", "platform": "ios"},
-               {"hostname": "198.51.100.60","Device":"Router (R6)", "username": "team", "password": "team", "platform": "ios"},
-               {"hostname": "198.51.100.70","Device":"Router (R7)", "username": "team", "password": "team", "platform": "ios"},
-               {"hostname": "198.51.100.80","Device":"Router (R8)", "username": "team", "password": "team", "platform": "ios"}]
+    with open("SSHinfo.json", "r") as f:
+        ssh_info = json.load(f)
+
+    routers = []
+    for entry in ssh_info:
+        routers.append({
+            "hostname": entry["IP"],
+            "Device": f"Router ({entry['hostname']})",
+            "username": entry["username"],
+            "password": entry["password"],
+            "platform": "ios"
+        })
 
     saved_files = []
 
@@ -29,7 +33,7 @@ def configurations():
             router_conn.close()
 
             timestamp = datetime.utcnow().strftime('%Y-%m-%d T %H-%M-%S')
-            filename = f"{router['hostname']}:{timestamp}.txt"
+            filename = f"{router['Device']}:{timestamp}.txt"
 
             with open(filename, "w") as file:
                 file.write(output)
@@ -44,5 +48,3 @@ def configurations():
 
 if __name__ == "__main__":
     configurations()
-
-

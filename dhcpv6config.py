@@ -7,7 +7,7 @@ def configure_dhcpv6(mgmt_ip, password, pool_name, ipv6_prefix, prefix_length, d
         device = {
             'device_type': 'cisco_ios',
             'ip': mgmt_ip,
-            'username': 'admin',
+            'username': 'team',
             'password': password,
         }
         net_connect = ConnectHandler(**device)

@@ -6,7 +6,7 @@ def configure_interface(mgmt_ip, password, interface_name=None, ipv4_address=Non
         device = {
             'device_type': 'cisco_ios',
             'ip': mgmt_ip,
-            'username': 'admin',
+            'username': 'team',
             'password': password,
         }
         net_connect = ConnectHandler(**device)

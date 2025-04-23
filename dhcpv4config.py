@@ -6,7 +6,7 @@ def configure_dhcpv4(mgmt_ip, password, pool_name, network_address, subnet_mask,
         device = {
             'device_type': 'cisco_ios',
             'ip': mgmt_ip,
-            'username': 'admin',
+            'username': 'team',
             'password': password,
         }
         net_connect = ConnectHandler(**device)
