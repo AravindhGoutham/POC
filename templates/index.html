@@ -7,7 +7,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f6fa;
+      background-color: #0f172a; /* Dark background */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -17,7 +17,7 @@
     h1 {
       margin-top: 40px;
       font-size: 2.5rem;
-      color: #1e293b;
+      color: #f8fafc; /* Light heading text */
       font-weight: 700;
     }
 
@@ -37,19 +37,19 @@
       background: url('/static/network_topology.png') no-repeat center center;
       background-size: cover;
       border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       height: 550px;
-      background-color: #ffffff;
+      background-color: #1e293b; /* Dark box background */
     }
 
     .menu {
       flex: 1;
       min-width: 300px;
       max-width: 350px;
-      background-color: #ffffff;
+      background-color: #1e293b; /* Dark card */
       padding: 40px 30px;
       border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -72,16 +72,16 @@
       font-weight: 600;
       text-align: center;
       text-decoration: none;
-      color: #2563eb;
-      border: 2px solid #2563eb;
+      color: #60a5fa;
+      border: 2px solid #60a5fa;
       border-radius: 12px;
       transition: 0.3s ease all;
     }
 
     .menu a:hover {
-      background-color: #2563eb;
-      color: white;
-      box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+      background-color: #60a5fa;
+      color: #0f172a;
+      box-shadow: 0 5px 15px rgba(96, 165, 250, 0.3);
       transform: translateY(-2px);
     }
 
@@ -110,6 +110,8 @@
         <li><a href="/dhcpv4">DHCPv4 Configuration</a></li>
         <li><a href="/interfaceconfig">Interface Configuration</a></li>
         <li><a href="/dhcpv6">DHCPv6 Configuration</a></li>
+        <li><a href="http://localhost:9090/targets?search=" target="_blank">Prometheus Dashboard</a></li>
+        <li><a href="http://localhost:3000/d/7qKD6I1Wk/snmp-exporter?orgId=1&from=now-30m&to=now&timezone=browser&var-Job=WDTC&var-Filters=&refresh=10s&var-Devices=198.51.100.10" target="_blank">Grafana</a></li>
       </ul>
     </div>
   </div>

@@ -5,7 +5,7 @@
     <title>DHCPv4 Configuration</title>
     <style>
         body {
-            background-color: #f2f6fc;
+            background-color: #0f172a; /* Dark background */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
@@ -16,7 +16,7 @@
         }
 
         h2 {
-            color: #2c3e50;
+            color: #f8fafc; /* Light header */
             margin-top: 40px;
             margin-bottom: 40px;
             font-size: 2rem;
@@ -36,22 +36,22 @@
         .image-container {
             flex: 1;
             background: url('/static/dhcp_handshake.png') no-repeat center center;
-            background-size: contain; /* ✅ FIT full image without cropping */
+            background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
             min-height: 550px;
             border-radius: 10px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-            background-color: white;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            background-color: #1e293b; /* Dark background for image box */
         }
 
         .form-container {
-            background-color: #ffffff;
+            background-color: #1e293b;
             padding: 30px 40px;
             border-radius: 10px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
             width: 400px;
-            min-height: 550px; /* Match the image height */
+            min-height: 550px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -61,7 +61,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
-            color: #34495e;
+            color: #f8fafc; /* Light label text */
         }
 
         input[type="text"],
@@ -78,8 +78,8 @@
         input[type="submit"] {
             width: 100%;
             padding: 12px;
-            background-color: #3498db;
-            color: white;
+            background-color: #60a5fa;
+            color: #0f172a;
             border: none;
             border-radius: 8px;
             font-size: 1.1rem;
@@ -88,7 +88,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #2980b9;
+            background-color: #3b82f6;
         }
     </style>
 </head>
@@ -127,4 +127,3 @@
     </div>
 </body>
 </html>
-
